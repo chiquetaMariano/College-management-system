@@ -22,7 +22,7 @@ class MateriaFactory extends Factory
     public function definition()
     {
         return [
-            'materia_dn' => $this->faker->sentence,
+            'materia_dn' => $this->faker->sentence($nbWords = 3),
             'carrera_id' => \App\Models\Carrera::inRandomOrder()->first()->carrera_id,
             'anio_id' => \App\Models\Anio::inRandomOrder()->first()->anio_id,
         ];

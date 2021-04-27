@@ -21,7 +21,7 @@ class LlamadoFactory extends Factory
      */
     public function definition()
     {
-        $llamados = array('Febrero', 'Marzo', 'Agosto', 'Noviembre', 'Diciembre');
+        $llamados = array('febrero', 'marzo', 'agosto', 'noviembre', 'diciembre');
 
         return [
             'llamado' => $faker->randomElements($llamados)

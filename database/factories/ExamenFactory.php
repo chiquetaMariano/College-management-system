@@ -21,16 +21,18 @@ class ExamenFactory extends Factory
      */
     public function definition()
     {
+        $fecha = $this->faker->dateTimeBetween($startDate = 'now', $max = '+1 years');
         return [
-            'fecha' =>,
-            'sede_id' =>,
-            'carrera_id' =>,
-            'division_id' =>,
-            'anio_id' =>,
-            'materia_id' =>,
-            'vocal_1' =>,
-            'vocal_2' =>,
-            'llamado_id' =>,
+            'fecha' => $fecha,
+            'sede_id' => \App\Models\Sede::inRandomOrder()->first()->sede_id,
+            'carrera_id' => \App\Models\Carrera::inRandomOrder()->first()->carrera_id,
+            'division_id' => \App\Models\Division::inRandomOrder()->first()->division_id,
+            'anio_id' => \App\Models\Anio::inRandomOrder()->first()->anio_id,
+            'materia_id' => \App\Models\Materia::inRandomOrder()->first()->materia_id,
+            'presidente' => \App\Models\Profesor::inRandomOrder()->first()->profesor_id,
+            'vocal_1' => \App\Models\Profesor::inRandomOrder()->first()->profesor_id,
+            'vocal_2' => \App\Models\Profesor::inRandomOrder()->first()->profesor_id,
+            'llamado_id' => \App\Models\Llamado::inRandomOrder()->first()->llamado_id,
         ];
     }
 }

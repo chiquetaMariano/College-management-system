@@ -13,7 +13,7 @@ class CreateTableFinales extends Migration
      */
     public function up()
     {
-        Schema::create('table_finales', function (Blueprint $table) {
+        Schema::create('finales', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('fecha');
 
