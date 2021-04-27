@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Materia;
+use App\Models\Examen;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MateriaFactory extends Factory
+class ExamenFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Materia::class;
+    protected $model = Examen::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,15 @@ class MateriaFactory extends Factory
     public function definition()
     {
         return [
-            'materia_dn' => $this->faker->sentence,
-            'carrera_id' => \App\Models\Carrera::inRandomOrder()->first()->carrera_id,
-            'anio_id' => \App\Models\Anio::inRandomOrder()->first()->anio_id,
+            'fecha' =>,
+            'sede_id' =>,
+            'carrera_id' =>,
+            'division_id' =>,
+            'anio_id' =>,
+            'materia_id' =>,
+            'vocal_1' =>,
+            'vocal_2' =>,
+            'llamado_id' =>,
         ];
     }
 }
