@@ -2,7 +2,7 @@
 
 @section('title', 'Admin')
 
-@extends('backend.layouts.table',
+@extends('backend.layouts.pivot',
     [
         'headers' => $headers,
         'datos' => $finales,

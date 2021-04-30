@@ -35,4 +35,42 @@ body {
 
 #titulo_tabla{
     color: #34c0eb;
+    text-align: center;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#overlay-content{
+  position: absolute;
+  display: none; /* Hidden by default */
+  text-align: justify;
+  padding: 15px 50px;
+  background-color: #FFF;
+  top: 50%;
+  left: 50%;
+  border-radius: 7px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+} */
+
+.spinner {
+    position: absolute;
+    text-align: justify;
+    top: 50%;
+    left: 50%;
 }
