@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Route;
 // BACKEND
 Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(function () {
 
+    Route::redirect('/', '/backend/home', 301);
+
+    // Vista de inicio para backend
+    Route::get('/home', function() {
+        return view('backend.home');
+    });
+
     // RUTAS RESOURCE
     Route::resource('sede', 'SedeController');
     Route::resource('carrera', 'CarreraController');
@@ -16,5 +23,6 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(functio
     Route::resource('llamado', 'LlamadoController');
     Route::resource('materia', 'MateriaController');
     Route::resource('profesor', 'ProfesorController');
+    Route::resource('final', 'FinalController');
 
 });

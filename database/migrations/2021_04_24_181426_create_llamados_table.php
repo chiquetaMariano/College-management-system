@@ -27,6 +27,7 @@ class CreateLlamadosTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('finales');
         Schema::dropIfExists('llamados');
     }
 }
