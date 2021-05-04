@@ -64,13 +64,15 @@ body {
   -ms-transform: translate(-50%,-50%);
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-} */
-
 .spinner {
     position: absolute;
     text-align: justify;
     top: 50%;
     left: 50%;
+}
+
+textarea.info {
+    background-color: #f7f7f9 !important;
+    resize: none;
+    overflow: hidden;
 }

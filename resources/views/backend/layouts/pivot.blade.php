@@ -47,24 +47,22 @@
     </tbody>
 </table>
 
-<div id="overlay" onclick="off();">
+<div id="overlay">
     <div class="spinner">
         <img src="/img/loading.gif" alt="cargando..." width="50px">
     </div>
-     <div id="overlay-content">
-         <h5>Info</h5>
-         <p>ID: <span></span></p>
-         <p>Fecha: <span></span></p>
-         <p>Sede: <span></span></p>
-         <p>Carrera: <span></span></p>
-         <p>División: <span></span></p>
-         <p>Año: <span></span></p>
-         <p>Materia: <span></span></p>
-         <p>Presidente: <span></span></p>
-         <p>1er vocal: <span></span></p>
-         <p>2do vocal: <span></span></p>
-         <p>Llamado: <span></span></p>
-     <a class="btn btn-primary" href="#">OK</a>
+     <div id="overlay-content" class="copy">
+        <h5 class="text-center">INFO</h5>
+        <textarea rows="11" cols="80" class="info form-control" readonly></textarea>
+        <div class="row mt-3">
+            <div class="col-md-4 offset-md-5">
+                <a class="btn btn-primary" href="#"  onclick="off();">OK</a>
+                <button class="btn btn-outline-primary" type="button" onclick="copy();">Copiar</button>
+            </div>
+            <div class="col-md-2 offset-md-1">
+                <p id="copiado" style="color: #F00; font-size: 13px;">¡Copiado!</p>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
@@ -81,6 +79,7 @@ function deleteBtn(id) {
 
 function on() {
   document.getElementById("overlay").style.display = "block";
+  document.querySelector('#copiado').style.visibility = "hidden";
 }
 
 function off() {
@@ -100,16 +99,40 @@ function getRequest(id)
 function adjuntarDatos(data)
 {
     let overlayContent = document.getElementById('overlay-content');
-    let placeholders = overlayContent.querySelectorAll('span');
+    let placeholder = document.querySelector('.info');
 
-    info = Object.values(data);
+    // Cargar datos en el textarea
+    placeholder.innerHTML = "";
 
-    placeholders.forEach((item, i) => {
-        item.innerHTML = info[i];
-    });
+    placeholder.innerHTML = `ID: ${data.id}
+Fecha: ${data.fecha}
+Sede: ${data.sede_dn}
+Carrera: ${data.carrera_dn}
+División: ${data.division}
+Año: ${data.anio}
+Materia: ${data.materia_dn}
+Presidente: ${data.presidente}
+1er Vocal: ${data.vocal_1}
+2do Vocal: ${data.vocal_2}
+Llamado: ${data.llamado}`;
 
     // Ocultar spinner y mostrar datos
     document.querySelector('.spinner').style.display = "none";
     overlayContent.style.display = "block";
 }
+
+function copy(){
+    var info = document.querySelector('.info');
+    info.select();
+    document.execCommand('copy');
+    document.querySelector('#copiado').style.visibility = "visible";
+    setTimeout(function () {
+        document.querySelector('#copiado').style.visibility = "hidden";
+    }, 800);
+}
+
+window.onload = function() {
+    document.querySelector(".info").addEventListener("click", copy);
+}
+
 </script>

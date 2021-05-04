@@ -1,6 +1,6 @@
 @extends('backend.layouts.main')
 
-@section('title', 'Admin')
+@section('title', 'Admin | Sedes')
 
 @extends('backend.layouts.table',
     [

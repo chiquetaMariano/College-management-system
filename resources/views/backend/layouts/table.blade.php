@@ -34,6 +34,11 @@
                 href="#">
                     <img src="/img/trash-can.png" alt="Eliminar"/>
                 </a>
+                <!-- <a class="btn btn-danger deleteBtn"
+                onclick="deleteBtn({{ $item->getAttribute($primaryKey) }});"
+                href="#">
+                    <img src="/img/trash-can.png" alt="Eliminar"/>
+                </a> -->
             </td>
         </tr>
     @empty
@@ -41,15 +46,36 @@
     @endforelse
     </tbody>
 </table>
+
+<div id="overlay" onclick="overlayOff();">
+     <div id="overlay-content" class="text-center">
+         <p>¿Desea eliminar el registro?</p>
+         <div class="modal-footer text-center">
+            <form method="post" id="frmDelete">
+                <input class="btn btn-danger" type="submit" name="submit" value="Confirmar" />
+                <input type="hidden" name="_method" value="DELETE" />
+                <button type="button" class="btn btn-primary" onclick="overlayOff();">Cancelar</button>
+            </form>
+         </div>
+    </div>
+</div>
+
 @endsection
 
 <script>
+function overlayOn() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("overlay-content").style.display = "block";
+}
+
+function overlayOff() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById('overlay-content').style.display = "none";
+}
+
 function deleteBtn(id) {
-    let r = confirm('¿Está seguro de eliminar este registro?');
-    if(r){
-        window.location.replace("/backend/{{$seccion}}/delete/"+ id);
-    } else {
-        console.log('canceled');
-    }
+    overlayOn();
+    let frmDelete = document.getElementById('frmDelete');
+    frmDelete.action = '/backend/{{$seccion}}/' + id;
 };
 </script>
