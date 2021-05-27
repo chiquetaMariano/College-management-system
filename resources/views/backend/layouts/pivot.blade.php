@@ -26,7 +26,7 @@
             } ?>
             <td>
                 <a class="btn btn-success" href="#" onclick="getRequest({{$item->$primaryKey}});">
-                    <img src="/img/edit.png" alt="Ver detalle"/>
+                    <img src="/img/see-details.png" alt="Ver detalle" width="70%"/>
                 </a>
             </td>
             <td>
@@ -128,7 +128,7 @@ function copy(){
     document.querySelector('#copiado').style.visibility = "visible";
     setTimeout(function () {
         document.querySelector('#copiado').style.visibility = "hidden";
-    }, 800);
+    }, 1000);
 }
 
 window.onload = function() {
