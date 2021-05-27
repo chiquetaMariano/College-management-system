@@ -2,6 +2,10 @@ body {
     background:#f9f9f9;
 }
 
+#finales-filter {
+    background: #e1ebfa;
+}
+
 #wrapper{
     padding:90px 15px;
 }
