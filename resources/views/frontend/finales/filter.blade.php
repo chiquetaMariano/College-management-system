@@ -1,5 +1,3 @@
-<h4>Filtrar</h4>
-
 <form class="form" action="index.html" method="post">
     <div class="form-group row">
         <label class="col-sm-1 col-form-label" for="sede">Sede</label>
@@ -42,6 +40,8 @@
         </div>
     </div>
 
-    <button type="submit" name="filter" class="btn btn-primary">Filtrar</button>
-    <button type="button" name="reset" class="btn btn-secondary">Reset</button>
+    <div class="text-center">
+        <button type="submit" name="filter" class="btn btn-primary">Filtrar</button>
+        <button type="reset" name="reset" class="btn btn-secondary">Limpiar</button>
+    </div>
 </form>

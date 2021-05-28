@@ -27,10 +27,13 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(functio
 
 });
 
-Route::namespace('Frontend')->name('frontend.')->prefix('/frontend')->group(function() {
+Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
 
     // TODO: assign controller
-    Route::get('/home', function() {
-        return view('frontend.finales.index');
-    });
+    Route::redirect('/', '/home', 301);
+
+    Route::get('home', 'FinalController@index');
+    // Route::get('home', function() {
+    //     return view('frontend.finales.index');
+    // });
 });

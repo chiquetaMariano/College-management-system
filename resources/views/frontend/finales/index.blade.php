@@ -2,6 +2,10 @@
 
 @section('title', 'Finales')
 
-@section('content')
-<p>FINALES</p>
-@endsection
+@extends('frontend.layouts.table',
+    [
+        'headers' => $headers,
+        'datos' => $finales,
+        'titulo' => 'FINALES',
+        'primaryKey' => 'id'
+    ])
