@@ -1,5 +1,18 @@
+@extends('frontend.layouts.main')
+
+@section('title', 'Finales')
+
 @section('content')
-<h4 id="titulo_tabla">{{ $titulo }}</h4>
+
+@isset($carrera)
+<div class="card-body text-center">
+    <h3>{{ $carrera }} - {{ $llamado }}</h3>
+</div>
+@endisset
+
+@foreach($finales as $finales_anio)
+@isset($finales_anio[0])
+<h4 id="titulo_tabla">Año {{ $finales_anio[0]->anio }}</h4>
 <table class="table">
     <thead>
         <tr>
@@ -9,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-    @forelse($datos as $item)
+    @forelse($finales_anio as $item)
         <tr>
             <td>{{ $item->fecha }}</td>
             <td>{{ $item->materia }}</td>
@@ -24,5 +37,8 @@
     @endforelse
     </tbody>
 </table>
+@endisset
+@endforeach
+
 
 @endsection

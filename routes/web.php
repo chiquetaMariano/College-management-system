@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // BACKEND
 Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(function () {
 
@@ -29,11 +25,9 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(functio
 
 Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
 
-    // TODO: assign controller
     Route::redirect('/', '/home', 301);
 
-    Route::get('home', 'FinalController@index');
-    // Route::get('home', function() {
-    //     return view('frontend.finales.index');
-    // });
+    Route::get('home', 'FinalController@home');
+    Route::post('finales', 'FinalController@show')->name('finales');
+    Route::get('debug', 'FinalController@index');
 });
