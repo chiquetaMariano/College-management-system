@@ -23,6 +23,7 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(functio
 
 });
 
+// FRONTEND
 Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
 
     Route::redirect('/', '/home', 301);
