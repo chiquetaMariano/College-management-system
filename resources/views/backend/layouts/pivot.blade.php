@@ -7,7 +7,9 @@
             @foreach($headers as $header)
             <th scope="col">{{ $header }}</th>
             @endforeach
+            @isset($seeDetails)
             <th scope="col">Ver Detalle</th>
+            @endisset
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
         </tr>
@@ -24,11 +26,13 @@
                     echo "<td>$value</td>";
                 }
             } ?>
+            @isset($seeDetails)
             <td>
                 <a class="btn btn-success" href="#" onclick="getRequest({{$item->$primaryKey}});">
                     <img src="/img/see-details.png" alt="Ver detalle" width="70%"/>
                 </a>
             </td>
+            @endisset
             <td>
                 <a class="btn btn-primary" href="{{ route("backend.$seccion.edit", $item->$primaryKey) }}">
                     <img src="/img/edit.png" alt="Editar"/>
@@ -65,16 +69,37 @@
         </div>
     </div>
 </div>
+
+<div id="overlayDelete" onclick="overlayOff();">
+     <div id="overlay-content-delete" class="text-center">
+         <p>¿Desea eliminar el registro?</p>
+         <div class="modal-footer text-center">
+            <form method="post" id="frmDelete">
+                <input class="btn btn-danger" type="submit" name="submit" value="Confirmar" />
+                <input type="hidden" name="_method" value="DELETE" />
+                <button type="button" class="btn btn-primary" onclick="overlayOff();">Cancelar</button>
+            </form>
+         </div>
+    </div>
+</div>
+
 @endsection
 
 <script>
+function overlayOn() {
+  document.getElementById("overlayDelete").style.display = "block";
+  document.getElementById("overlay-content-delete").style.display = "block";
+}
+
+function overlayOff() {
+  document.getElementById("overlayDelete").style.display = "none";
+  document.getElementById('overlay-content-delete').style.display = "none";
+}
+
 function deleteBtn(id) {
-    let r = confirm('¿Está seguro de eliminar este registro?');
-    if(r){
-        window.location.replace("/backend/{{$seccion}}/delete/"+ id);
-    } else {
-        console.log('canceled');
-    }
+    overlayOn();
+    let frmDelete = document.getElementById('frmDelete');
+    frmDelete.action = '/backend/{{$seccion}}/' + id;
 };
 
 function on() {

@@ -7,5 +7,6 @@
         'headers' => $headers,
         'datos' => $finales,
         'titulo' => 'FINALES',
+        'seeDetails' => true,
         'primaryKey' => 'id'
     ])

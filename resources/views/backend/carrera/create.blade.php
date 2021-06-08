@@ -1,22 +1,22 @@
 @extends('backend.layouts.main')
 
-@section('title', 'Sede | Nuevo')
+@section('title', 'Carrera | Nuevo')
 
 @section('content')
-<h2>Nueva Sede</h2>
+<h2>Nueva Carrera</h2>
 
-<form class="form" action="{{ route('backend.sede.store') }}" method="post">
+<form class="form" action="{{ route('backend.carrera.store') }}" method="post">
     <div class="form-group">
       <label for="descripcion">Nombre</label>
       <input type="text" class="form-control" id="descripcion" name="descripcion" required autofocus>
     </div>
     <div class="form-group">
-        <label for="calle">Calle</label>
-        <input type="text" class="form-control" id="calle" name="calle" required>
+        <label for="anios">Años</label>
+        <input type="number" class="form-control" id="anios" name="anios" required>
     </div>
     <div class="form-group">
-        <label for="altura">Altura</label>
-        <input type="number" class="form-control" id="altura" name="altura" required>
+        <label for="resolución">Resolución</label>
+        <input type="text" class="form-control" id="resolución" name="resolución" required>
     </div>
     <div class="text-center">
         <button type="submit" class="btn btn-success">Guardar</button>

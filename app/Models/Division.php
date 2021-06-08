@@ -10,4 +10,6 @@ class Division extends Model
     use HasFactory;
 
     protected $table = 'divisiones';
+
+    protected $primaryKey = 'division_id';
 }
