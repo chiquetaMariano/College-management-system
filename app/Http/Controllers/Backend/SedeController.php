@@ -16,8 +16,6 @@ class SedeController extends Controller
 
     public function store(\Illuminate\Http\Request $request)
     {
-        // $validatedData = $request->validate(Sede::getRules());
-
         $sede = new Sede();
 
         $sede = $this->bindData($sede, $request);
@@ -52,7 +50,7 @@ class SedeController extends Controller
     public function destroy($id)
     {
         Sede::destroy($id);
-        
+
         return redirect(route('backend.sede.index'));
     }
 

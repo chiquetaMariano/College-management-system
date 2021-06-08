@@ -10,4 +10,6 @@ class Llamado extends Model
     use HasFactory;
 
     protected $table = 'llamados';
+
+    protected $primaryKey = 'llamado_id';
 }
