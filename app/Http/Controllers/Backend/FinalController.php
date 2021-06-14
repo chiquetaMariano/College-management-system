@@ -22,7 +22,6 @@ class FinalController extends Controller
                         ->get();
 
         $headers = ['Fecha'];
-        // $headers = ['Fecha', 'Sede', 'Carrera', 'División', 'Año', 'Materia', 'Presidente', 'Vocal 1', 'Vocal 2', 'Llamado'];
         return view('backend.final.index', ['finales' => $finales, 'headers' => $headers, 'seccion' => 'final']);
     }
 
@@ -51,6 +50,41 @@ class FinalController extends Controller
     public function store(\Illuminate\Http\Request $request)
     {
         $final = new Examen();
+
+        $final = $this->bindData($final, $request);
+
+        $final->save();
+
+        return redirect(route('backend.final.index'));
+    }
+
+    public function edit($id)
+    {
+        $final = Examen::findOrFail($id);
+        $sedes = Sede::all();
+        $profesores = Profesor::all();
+        $materias = Materia::all();
+        $divisiones = Division::all();
+        $carreras = Carrera::All();
+        $anios = Anio::All();
+        $llamados = Llamado::All();
+
+        return view('backend.final.edit',[
+            'final' => $final,
+            'sedes' => $sedes,
+            'profesores' => $profesores,
+            'materias' => $materias,
+            'divisiones' => $divisiones,
+            'carreras' => $carreras,
+            'anios' => $anios,
+            'profesores' => $profesores,
+            'llamados' => $llamados
+        ]);
+    }
+
+    public function update(\Illuminate\Http\Request $request, $final_id)
+    {
+        $final = Examen::findOrFail($final_id);
 
         $final = $this->bindData($final, $request);
 
