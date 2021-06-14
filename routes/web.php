@@ -32,3 +32,7 @@ Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
     Route::post('finales', 'FinalController@show')->name('finales');
     Route::get('debug', 'FinalController@index');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
