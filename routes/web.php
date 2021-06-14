@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // BACKEND
-Route::namespace('Backend')->name('backend.')->prefix('/backend')->group(function () {
+Route::namespace('Backend')->name('backend.')->prefix('/backend')->middleware('auth')->group(function () {
 
     Route::redirect('/', '/backend/home', 301);
 
@@ -34,5 +34,3 @@ Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
