@@ -20,7 +20,8 @@ Backend y Frontend para gestión de exámenes finales. El proyecto cuenta con lo
 ## Setup
 
 ### Requisitos:
-Se necesitan tener instaladas las siguientes herramientas
+Se necesitan tener instaladas las siguientes herramientas:
+
 - Composer
 - Laravel
 - MySQL
