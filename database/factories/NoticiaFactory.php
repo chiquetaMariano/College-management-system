@@ -21,8 +21,15 @@ class NoticiaFactory extends Factory
      */
     public function definition()
     {
+        $fecha = $this->faker->dateTimeBetween($startDate = '-1 years', $max = 'now');
         return [
-            //
+            'titulo' => $this->faker->sentence,
+            'cuerpo' => $this->faker->text,
+            'adjunto' => $this->faker->optional()->imageUrl,
+            'fecha' => $fecha,
+            'ocultar' => $this->faker->boolean(),
+            'carrera_id' => \App\Models\Carrera::inRandomOrder()->first()->carrera_id,
+            'anio_id' => \App\Models\Anio::inRandomOrder()->first()->anio_id,
         ];
     }
 }
