@@ -13,6 +13,6 @@ class NoticiasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Noticia::class, 25)->create();
+        \App\Models\Noticia::factory()->count(25)->create();
     }
 }
