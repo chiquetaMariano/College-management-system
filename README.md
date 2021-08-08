@@ -5,8 +5,13 @@
 
 ---
 
+![backend_01](https://i.postimg.cc/jSrnqrHp/Screenshot-3.png "Backend")
+![backend_02](https://i.postimg.cc/9F9qjf7P/Screenshot-2.png "Backend")
+![frontend](https://i.postimg.cc/KcwgVTRv/Screenshot-1.png "Frontend")
+
 ## Descripción
 Backend y Frontend para gestión de exámenes finales. El proyecto cuenta con lo siguiente:
+
 1. Sistema de autenticación y roles de usuario: guest/invitados y usuarios registrados.
 2. Sistema de notificaciones por mail
 3. Backend: ABM para la gestión de la información relacionada a los exámenes (usuarios registrados).
@@ -15,7 +20,8 @@ Backend y Frontend para gestión de exámenes finales. El proyecto cuenta con lo
 ## Setup
 
 ### Requisitos:
-Se necesitan tener instaladas las siguientes herramientas
+Se necesitan tener instaladas las siguientes herramientas:
+
 - Composer
 - Laravel
 - MySQL
