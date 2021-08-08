@@ -5,7 +5,7 @@
 @section('content')
 <h2>Editar Noticia</h2>
 
-<form class="form" action="{{ route('backend.noticia.store') }}" method="post">
+<form class="form" action="{{ route('backend.noticia.update', $noticia->id) }}" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="nombre">ID</label>
         <input type="text" class="form-control" value="{{ $noticia->id }}" name="noticia_id" disabled/>
@@ -51,12 +51,12 @@
 
     <div class="form-group">
         <label for="adjunto">Adjunto</label>
-        <input type="file" class="form-control-file" id="adjunto">
+        <input type="file" class="form-control-file" name="adjunto" id="adjunto">
     </div>
 
     <div class="form-group">
         <label for="fecha">Fecha</label>
-        <input  class="form-control" type="datetime-local" name="fecha" />
+        <input  class="form-control" type="datetime-local" name="fecha" value="{{ $noticia->fecha }}"/>
     </div>
 
     <div class="form-group">
@@ -67,6 +67,8 @@
         @endif
         />
     </div>
+
+    <input type="hidden" name="_method" value="PUT" />
 
     <div class="text-center">
         <button type="submit" class="btn btn-success">Guardar</button>

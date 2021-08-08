@@ -28,9 +28,33 @@ class NoticiaController extends Controller
         ]);
     }
 
+    // public function show($id)
+    // {
+    //     $noticia = Noticia::findOrFail($id);
+
+    //     return view('backend.noticia.show', 
+    //     [
+    //         'noticia' => $noticia
+    //     ]);
+    // }
+
     public function store(\Illuminate\Http\Request $request)
     {
-        // 
+        $noticia = new Noticia();
+
+        $noticia = $this->bindData($noticia, $request);
+
+        // // Procesar archivo de imagen, si existe
+        // if($request->hasFile('adjunto')) {
+        //     $adjunto = $request->file('adjunto');
+        //     $path = $adjunto->storeAs('public/noticias', time() . $adjunto->getClientOriginalName());
+        //     $savedPath = str_replace('public/', '', $path);
+        //     $noticia->adjunto = $savedPath;
+        // }
+
+        $noticia->save();
+
+        return redirect(route('backend.noticia.index'));
     }
 
     public function edit($id)
@@ -48,16 +72,39 @@ class NoticiaController extends Controller
 
     public function update(\Illuminate\Http\Request $request, $noticia_id)
     {
-        // 
+        $noticia = Noticia::findOrFail($noticia_id);
+
+        $noticia = $this->bindData($noticia, $request);
+
+        $noticia->save();
+
+        return redirect(route('backend.noticia.index'));
     }
 
     public function destroy($id)
     {
-        // 
+        Noticia::destroy($id);
+
+        return redirect(route('backend.noticia.index'));
     }
 
     private function bindData(Noticia $noticia, \Illuminate\Http\Request $request)
     {
-        // 
+        $noticia->titulo = $request->input('titulo');
+        $noticia->cuerpo = $request->input('cuerpo');
+        $noticia->carrera_id = $request->input('carrera');
+        $noticia->anio_id = $request->input('anio');
+        $noticia->ocultar = ($request->input('oculta') === 'checked') ? True : False;
+        $noticia->fecha = $request->input('fecha');
+
+        // Procesar archivo de imagen, si existe
+        if($request->hasFile('adjunto')) {
+            $adjunto = $request->file('adjunto');
+            $path = $adjunto->storeAs('public/noticias', time() . $adjunto->getClientOriginalName());
+            $savedPath = str_replace('public/', '', $path);
+            $noticia->adjunto = $savedPath;
+        }        
+
+        return $noticia;
     }
 }

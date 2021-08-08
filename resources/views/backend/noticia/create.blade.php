@@ -5,7 +5,7 @@
 @section('content')
 <h2>Nueva Noticia</h2>
 
-<form class="form" action="{{ route('backend.noticia.store') }}" method="post">
+<form class="form" action="{{ route('backend.noticia.store') }}" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="nombre">ID</label>
         <input type="text" class="form-control" value="{{ $noticia->noticia_id ?? 0 }}" name="noticia_id" disabled/>
@@ -43,7 +43,7 @@
 
     <div class="form-group">
         <label for="adjunto">Adjunto</label>
-        <input type="file" class="form-control-file" id="adjunto">
+        <input type="file" class="form-control-file" id="adjunto" name="adjunto">
     </div>
 
     <div class="form-group">
