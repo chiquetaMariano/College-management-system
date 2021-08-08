@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Noticia extends Model
 {
     use HasFactory;
+
+    public function perteneceA()
+    {
+        return $this->belongsTo('\App\Models\Carrera', 'carrera_id');
+    }
 }
