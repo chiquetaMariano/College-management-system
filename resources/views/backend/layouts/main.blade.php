@@ -52,6 +52,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.final.index') }}">Finales</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.noticia.index') }}">Noticias</a>
+              </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

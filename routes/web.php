@@ -20,6 +20,7 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->middleware('a
     Route::resource('materia', 'MateriaController');
     Route::resource('profesor', 'ProfesorController');
     Route::resource('final', 'FinalController');
+    Route::resource('noticia', 'NoticiaController');
 
 });
 
