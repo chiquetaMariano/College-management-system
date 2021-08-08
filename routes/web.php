@@ -31,7 +31,8 @@ Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
 
     Route::get('home', 'FinalController@home');
     Route::post('finales', 'FinalController@show')->name('finales');
-    Route::get('debug', 'FinalController@index');
+
+    Route::get('noticias', 'NoticiaController@index')->name('noticias');
 });
 
 Auth::routes();
