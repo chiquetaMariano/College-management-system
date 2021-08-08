@@ -22,7 +22,7 @@
         <tr>
             <td>{{ $noticia->id }}</td>
             <td>{{ $noticia->perteneceA->carrera_dn }}</td>
-            <td>{{ $noticia->anio_id }}</td>
+            <td>{{ $noticia->anio_id }}°</td>
             <td>{{ $noticia->titulo }}</td>
             <td>{{ $noticia->fecha }}</td>
             <td>
