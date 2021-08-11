@@ -43,16 +43,16 @@ class MailResetPasswordNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $link = url( "/password/reset/?token=" . $this->token );
+        $link = url( "/password/reset/token=" . $this->token );
         return (new MailMessage)
                     ->subject('Reestablecimiento de cuenta')
-                    ->greetings('ISFT 38')
+                    ->greeting('ISFT 38')
                     ->from('isft38@example.com')
                     ->line('Se solicitó un cambio de contraseña para tu cuenta.')
                     ->action('Restablecer contraseña', $link)
                     ->line( "Si no ha solicitado un cambio de contraseña, puede ignorar este correo." )
-                      ->line( 'Saludos cordiales,' )
-                      ->salutation( 'ISFT 38' );
+                    ->line( 'Saludos cordiales,' )
+                    ->salutation( 'ISFT 38' );
     }
 
     /**
