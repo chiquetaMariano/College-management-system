@@ -94,7 +94,7 @@ class NoticiaController extends Controller
         $noticia->cuerpo = $request->input('cuerpo');
         $noticia->carrera_id = $request->input('carrera');
         $noticia->anio_id = $request->input('anio');
-        $noticia->ocultar = ($request->input('oculta') === 'checked') ? True : False;
+        $noticia->ocultar = ($request->input('oculta') === 'on') ? 1 : 0;
         $noticia->fecha = $request->input('fecha');
 
         // Procesar archivo de imagen, si existe

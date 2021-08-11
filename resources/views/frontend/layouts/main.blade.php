@@ -15,8 +15,18 @@
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">ISFT 38</a>
-            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">ISFT 38</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./home">Finales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./noticias">Noticias</a>
+                </li>
+            </ul>
+                <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest

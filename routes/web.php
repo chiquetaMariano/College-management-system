@@ -33,6 +33,8 @@ Route::namespace('Frontend')->name('frontend.')->prefix('/')->group(function() {
     Route::post('finales', 'FinalController@show')->name('finales');
 
     Route::get('noticias', 'NoticiaController@index')->name('noticias');
+    Route::get('noticias/{id}', 'NoticiaController@show')->name('noticia.leer');
+    Route::post('por-carrera', 'NoticiaController@porCarrera')->name('por-carrera');
 });
 
 Auth::routes();

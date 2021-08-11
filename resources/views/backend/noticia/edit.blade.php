@@ -72,7 +72,7 @@
 
     <div class="text-center">
         <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="./" class="btn btn-danger">Cancelar</a>
+        <a href="/backend/noticia" class="btn btn-danger">Cancelar</a>
     </div>
 </form>
 @endsection

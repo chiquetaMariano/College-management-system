@@ -13,4 +13,14 @@ class Noticia extends Model
     {
         return $this->belongsTo('\App\Models\Carrera', 'carrera_id');
     }
+
+    public static function visibles()
+    {
+        return Noticia::where('ocultar', '=', 0);
+    }
+
+    public static function porCarrera($carrera_id)
+    {
+        return Noticia::where('carrera_id', '=', $carrera_id);
+    }
 }
