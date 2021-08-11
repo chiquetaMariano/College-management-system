@@ -10,7 +10,7 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->middleware('a
     // Vista de inicio para backend
     Route::get('/home', function() {
         return view('backend.home');
-    });
+    })->name('home');
 
     // RUTAS RESOURCE
     Route::resource('sede', 'SedeController');

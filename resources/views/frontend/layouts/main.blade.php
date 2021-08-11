@@ -24,10 +24,10 @@
                     <a class="navbar-brand" href="#">ISFT 38</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./home">Finales</a>
+                    <a class="nav-link" href="/home">Finales</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./noticias">Noticias</a>
+                    <a class="nav-link" href="/noticias">Noticias</a>
                 </li>
             </ul>
                 <!-- Right Side Of Navbar -->
@@ -52,6 +52,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('backend.home') }}">Backend</a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
