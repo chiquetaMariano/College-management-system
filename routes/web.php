@@ -21,7 +21,7 @@ Route::namespace('Backend')->name('backend.')->prefix('/backend')->middleware('a
     Route::resource('profesor', 'ProfesorController');
     Route::resource('final', 'FinalController');
     Route::resource('noticia', 'NoticiaController');
-
+    Route::resource('user', 'UserController');
 });
 
 // FRONTEND

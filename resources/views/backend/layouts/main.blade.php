@@ -55,6 +55,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.noticia.index') }}">Noticias</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.user.index') }}">Usuarios</a>
+              </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -79,6 +82,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('frontend.noticias') }}">Blog</a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

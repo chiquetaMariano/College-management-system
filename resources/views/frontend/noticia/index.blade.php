@@ -4,7 +4,6 @@
 
 
 @section('content')
-<div class="">
   <div class="form-control">
     <form action="{{ route('frontend.por-carrera') }}" method="post">
       <div class="form-group">
@@ -24,7 +23,6 @@
         </div>
       </div>
     </form>
-  </div>
   </div>
 @forelse ($noticias as $noticia)
 @if($loop->first)
