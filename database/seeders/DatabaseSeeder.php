@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DivisionesTableSeeder::class);
         \App\Models\Materia::factory(10)->create();
         \App\Models\Examen::factory(10)->create();
+        \App\Models\Noticia::factory(20)->create();
     }
 }
