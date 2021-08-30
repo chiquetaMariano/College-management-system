@@ -16,7 +16,7 @@ Backend and Frontend for exams management. This project has the following featur
 
 ## Setup
 
-### Requisitos:
+### Requirements:
 This project was developed using Laravel Homestead Vagrant box:
 
 - Composer
