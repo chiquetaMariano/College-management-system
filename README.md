@@ -23,3 +23,19 @@ This project was developed using Laravel Homestead Vagrant box:
 - Laravel
 - MySQL
 - PHP
+
+### Installation:
+
+1. Clone this repo running command `git clone https://mariano_chiqueta@bitbucket.org/mariano_chiqueta/trabajo-final.git` on a terminal.
+
+Navigate to the project folder and follow the following steps:
+
+2. Execute command `composer install` to install dependencies of the project.
+
+3. Copy the content of the .env.example file to .env and edit the database and mail server configuration with your own parameters.
+
+4. Run the command `php artisan key:generate`
+
+5. Execute the command `php artisan migrate --seed` in order to generate the tables for your database and generate test data for it.
+
+6. Start the server running `php artisan serve`. Enter the URL application from your browser.
